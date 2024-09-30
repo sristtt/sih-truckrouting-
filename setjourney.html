@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Journey</title>
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="setjourney.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+    <!-- <style>
+        /* Set the map container height */
+        #map {
+            height: 650px; /* Set a height for the map */
+            width: 75%; /* Full width */
+        }
+    </style> -->
+
+</head>
+<body>
+    <header>
+        <div class="inline-flex items-center space-x-2">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="60"
+                height="60"
+              >
+                <defs>
+                  <linearGradient
+                    id="lilacGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #f17e4df8; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #333cd6; stop-opacity: 1"
+                    />
+                  </linearGradient>
+                </defs>
+  
+                <circle cx="50" cy="50" r="45" fill="url(#lilacGradient)" />
+              </svg>
+            </span>
+            <span class="font-bold">Nadish</span>
+        </div>
+
+
+
+
+
+       <!--- <div class="logo" title="University Management System">
+            <img src="./images/logo.png" alt="">
+            <h2>U<span class="danger">M</span>S</h2>
+        </div>-->
+        <div class="navbar">
+            <a href="index.html" class="active">
+                <span class="material-icons-sharp">home</span>
+                <h3>Home</h3>
+            </a>
+            <a href="timetable.html" onclick="timeTableAll()">
+                <span class="material-icons-sharp">today</span>
+                <h3>Current Journey</h3>
+            </a> 
+            <a href="exam.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Weather Predictions</h3>
+            </a>
+            <a href="password.html">
+                <span class="material-icons-sharp">password</span>
+                <h3>Notifications</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp" onclick="">logout</span>
+                <h3>End journey</h3>
+            </a>
+        </div>
+        <div id="profile-btn">
+            <span class="material-icons-sharp">person</span>
+        </div>
+        <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+        </div>
+        
+    </header>
+    <div class="container">
+        <h2>&nbsp &nbsp &nbspFIND ROUTE</h2>
+        <tr>
+            <td>
+                <button class="buttons" id="start" >Narela</button>
+            </td><td>
+                <button class="buttons" id="stop" >Rithala</button>
+            </td>
+        </tr><tr>
+            <td colspan = 2>
+                <button id="find">Find Route</button>
+            </td>
+        </tr><tr>
+            <td colspan = 2>
+                <br>
+                <b id="save"> SAVE AND LOAD</b>
+            </td>
+        </tr>
+        <div class="dropdown">
+            <button class="dropbtn">Route List ↓</button>
+            <div class="dropdown-content">
+              <a href="#">Route 1</a>
+              <a href="#">Route 2</a>
+              <a href="#">Route 3</a>
+            </div>
+          </div>
+    </div>
+    <div class="container1">
+        <tr>
+            <td colspan = 2>
+                <button class= "buttons" id="update">Update Route List</button>
+            </td>
+        </tr>
+        
+            <td>
+                <button class="buttons" id="savebtn" >Save Route</button>
+            </td><td>
+                <button class="buttons" id="loadbtn" >Load Route</button>
+            </td>
+        </tr>
+    </div>
+    <div class="parameters">
+        <div class="parameter">
+            <label for="range1">Time</label>
+            <input type="range" id="range1" min="0" max="100" value="20" step="10">
+        </div>
+        <div class="parameter">
+            <label for="range2">Engine Efficiency</label>
+            <input type="range" id="range2" min="0" max="100" value="60" step="10">
+        </div>
+        <div class="parameter">
+            <label for="range3">Safety</label>
+            <input type="range" id="range3" min="0" max="100" value="80" step="10">
+        </div>
+        <div class="parameter">
+            <label for="range4">Comfort</label>
+            <input type="range" id="range4" min="0" max="100" value="50" step="10">
+        </div>
+    </div>
+    <div id="map"></div> <!-- Map container -->
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    // Initialize the map and set its view to Indian Ocean coordinates
+    // const map = L.map('map').setView([-20.0, 80.0], 3);
+    const map = L.map('map').setView([28.6950, 77.0880], 12);
+
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 14,
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add markers and polyline
+    const marker1 = L.marker([28.7070, 77.0673]).addTo(map);
+    marker1.bindPopup('Starting Point').openPopup();
+
+    const marker2 = L.marker([28.6831, 77.1068]).addTo(map);
+    marker2.bindPopup('Destination').openPopup();
+
+    const latlngs = [
+    [28.7070, 77.0673], // Narela
+    [28.6831, 77.1068]  // Rithala
+    ];
+    const polyline = L.polyline(latlngs, { color: 'blue' }).addTo(map);
+
+    // Adjust the map view
+    map.fitBounds(polyline.getBounds());
+</script>
+
+<!-- Other Scripts -->
+<script src="timeTable.js"></script>
+<script src="dashboard.js"></script>
+            
+
+    
+    <script src="timeTable.js"></script>
+    <script src="setjourney.js"></script>
+
+</body>
+</html>
