@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body style="background-color: #ffffff;">
+    <header style="background-color: #ffffff;">
+        <div class="inline-flex items-center space-x-2" style="background-color: #ffffff;">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="60"
+                height="60"
+              >
+                <defs>
+                  <linearGradient
+                    id="lilacGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #f17e4df8; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #333cd6; stop-opacity: 1"
+                    />
+                  </linearGradient>
+                </defs>
+  
+                <circle cx="50" cy="50" r="45" fill="url(#lilacGradient)" />
+              </svg>
+            </span>
+            <span class="font-bold">Raahi</span>
+        </div>
+
+
+
+
+
+       <!--- <div class="logo" title="University Management System">
+            <img src="./images/logo.png" alt="">
+            <h2>U<span class="danger">M</span>S</h2>
+        </div>-->
+        <div class="navbar" style="background-color: #ffffff;">
+            <a href="front.html" class="active">
+                <span class="material-icons-sharp">home</span>
+                <h3>Home</h3>
+            </a>
+            <a href="journey.html" onclick="timeTableAll()">
+                <span class="material-icons-sharp">today</span>
+                <h3>Current Journey</h3>
+            </a> 
+            <a href="exam.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Route Analysis & Report</h3>
+            </a>
+            <a href="password.html">
+                <span class="material-icons-sharp">password</span>
+                <h3>Notifications</h3>
+            </a>
+            <a href="roleapplication.html">
+                <span class="material-icons-sharp" onclick="">logout</span>
+                <h3>End journey</h3>
+            </a>
+        </div>
+        <div id="profile-btn">
+            <span class="material-icons-sharp">person</span>
+        </div>
+        <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+        </div>
+        
+    </header>
+    <div class="container" style="background: color #eca705;">
+        <aside>
+            <div class="profile">
+                <div class="top">
+                    <div class="profile-photo">
+                        <img src="https://png.pngtree.com/png-vector/20221203/ourmid/pngtree-cartoon-style-female-user-profile-icon-vector-illustraton-png-image_6489286.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p>Hey, <b>Suhani</b> </p>
+                        <small class="text-muted">Journey ID- 12312123</small>
+                    </div>
+                </div>
+                <div class="about">
+                    <h5>Journey</h5>
+                    <p>Narobi - Mumbai</p>
+                    <h5>Date of start </h5>
+                    <p>29-Feb-2024</p>
+                    <h5>Date of end </h5>
+                    <p>30-Feb-2024</p>
+                    <h5>Current Location </h5>
+                    <p>cape of good</p>
+                    <h5>Cordinates</h5>
+                    <p>12-2112-122</p>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <h1>Current Journey</h1>
+            <div class="subjects">
+                <div class="eg">
+                  <span class="material-icons-sharp"></span>
+                    <h3>View your Route</h3>
+                    
+                    <div class="progress">
+                        <img src="">
+                    </div>
+                </div>
+                <div class="mth">
+                    <span class="material-icons-sharp"></span>
+                    <h3>Route Analysis</h3>
+                    
+                    <div class="progress">
+                        <img src="">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="subjects">
+                <div class="cs">
+                    <span class="material-icons-sharp"></span>
+                    <h3>notifications</h3>
+                    
+                    <div class="progress">
+                        <img src="">
+                    </div>
+                    
+                </div>
+                <div class="cg">
+                    <span class="material-icons-sharp"></span>
+                    <h3>Profile</h3>
+
+                    <div class="progress">
+                        <img src="">
+                    </div>
+                    
+                </div>
+            </div>
+
+        </main>
+
+ 
+            
+    
+
+
+    </div>
+
+    <script src="timeTable.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
