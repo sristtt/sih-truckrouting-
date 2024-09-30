@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <!--<link href="bootstrap.min.css" rel="stylesheet">-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body style="background-color: #fdffff;">
+    <header style="background-color: #ffffff;">
+        <div class="inline-flex items-center space-x-2" style="background-color: #ffffff;">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="60"
+                height="60"
+              >
+                <defs>
+                  <linearGradient
+                    id="lilacGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #f17e4df8; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #333cd6; stop-opacity: 1"
+                    />
+                  </linearGradient>
+                </defs>
+  
+                <circle cx="50" cy="50" r="45" fill="url(#lilacGradient)" />
+              </svg>
+            </span>
+            <span class="font-bold">Raahi</span>
+        </div>
+
+
+
+
+
+       <!--- <div class="logo" title="University Management System">
+            <img src="./images/logo.png" alt="">
+            <h2>U<span class="danger">M</span>S</h2>
+        </div>-->
+        <div class="navbar" style="background-color: #f6f7f7;">
+            <a href="dashboard.html" class="active">
+                <span class="material-icons-sharp">home</span>
+                <h3>Home</h3>
+            </a>
+            <a href="setjourney.html" onclick="timeTableAll()">
+                <span class="material-icons-sharp">today</span>
+                <h3>Current Journey</h3>
+            </a> 
+            <a href="report.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Route Analysis & Report</h3>
+            </a>
+            <a href="password.html">
+                <span class="material-icons-sharp">password</span>
+                <h3>Notifications</h3>
+            </a>
+            <a href="index.html">
+                <span class="material-icons-sharp" onclick="">logout</span>
+                <h3>End journey</h3>
+            </a>
+        </div>
+        <div id="profile-btn">
+            <span class="material-icons-sharp">person</span>
+        </div>
+        <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+        </div>
+        
+    </header>
+    <div class="container" style="background-color: #ffffff;">
+        <aside>
+            <div class="profile">
+                <div class="top">
+                    <div class="profile-photo">
+                        <img src="https://png.pngtree.com/png-vector/20221203/ourmid/pngtree-cartoon-style-female-user-profile-icon-vector-illustraton-png-image_6489286.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p>Hey, <b>Suhani</b> </p>
+                        <small class="text-muted">Journey ID- 12312123</small>
+                    </div>
+                </div>
+                <div class="about">
+                    <h5>Journey</h5>
+                    <p>Narobi - Mumbai</p>
+                    <h5>Date of start </h5>
+                    <p>29-Feb-2024</p>
+                    <h5>Date of end </h5>
+                    <p>30-Feb-2024</p>
+                    <h5>Current Location </h5>
+                    <p>cape of good</p>
+                    <h5>Cordinates</h5>
+                    <p>12-2112-122</p>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="text-center py-5 px-3">
+                <div class="container-fluid text-center">
+                    <!-- <div class="starter-template text-center py-5 px-3"> -->
+                    <div class="py-3 px-3">
+                      <div class="jumbotron text-center">
+                        <h1 class="display-5">City Dataset</h1>
+                      </div>
+                    </div>
+                <table class="table-borderless table-hover" width="100%">
+                  <thead class="table-info">
+                    <tr class="text-center">
+                      <th>Starting City ID</th>
+                      <th>City</th>
+                      <th>Time departured</th>
+                      <th>Date</th>
+                      <th>cargo deloaded</th>
+                      <th>Destination City ID</th>
+                      <th>City</th>
+                      <th>Time arrived</th>
+                      <th>cargo loaded</th>
+                      <th>Capacity occupied</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-light table-borderless table-hover text-center">
+                    <tr>
+                      <td>1</td>
+                      <td>Mumbai</td>
+                      <td>08:00</td>
+                      <td>2024-09-30</td>
+                      <td>150</td>
+                      <td>2</td>
+                      <td>Pune</td>
+                      <td>10:00</td>
+                      <td>100</td>
+                      <td>250</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Delhi</td>
+                      <td>09:30</td>
+                      <td>2024-09-30</td>
+                      <td>200</td>
+                      <td>3</td>
+                      <td>Jaipur</td>
+                      <td>11:30</td>
+                      <td>150</td>
+                      <td>350</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Bengaluru</td>
+                      <td>10:15</td>
+                      <td>2024-09-30</td>
+                      <td>120</td>
+                      <td>4</td>
+                      <td>Hyderabad</td>
+                      <td>12:30</td>
+                      <td>130</td>
+                      <td>250</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Kolkata</td>
+                      <td>11:00</td>
+                      <td>2024-09-30</td>
+                      <td>180</td>
+                      <td>5</td>
+                      <td>Patna</td>
+                      <td>13:30</td>
+                      <td>90</td>
+                      <td>270</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Chennai</td>
+                      <td>12:00</td>
+                      <td>2024-09-30</td>
+                      <td>160</td>
+                      <td>6</td>
+                      <td>Coimbatore</td>
+                      <td>14:00</td>
+                      <td>110</td>
+                      <td>270</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>Ahmedabad</td>
+                      <td>13:30</td>
+                      <td>2024-09-30</td>
+                      <td>175</td>
+                      <td>7</td>
+                      <td>Surat</td>
+                      <td>15:30</td>
+                      <td>120</td>
+                      <td>275</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>Ajmer</td>
+                      <td>14:00</td>
+                      <td>2024-09-30</td>
+                      <td>90</td>
+                      <td>8</td>
+                      <td>Udaipur</td>
+                      <td>16:00</td>
+                      <td>80</td>
+                      <td>170</td>
+                    </tr>
+                  
+                  </tbody>
+                </table>
+
+                <div  style="max-width: 50rem; margin-top: 4rem;">
+                    
+                    <div class="card-body">
+                      <h1 style="color: #333cd6; size: 1rem;">Detail report</h1>
+                      <p class="card-text" style="max-width: 50rem; margin-top: 2rem;">
+
+                        This report provides insights into the operational performance of the All India Road Transport Network (RTN) for the Department of Posts.
+                        It highlights key metrics related to capacity utilization, delivery efficiency, and delay management.
+                        <ul>
+                          <li>Total Routes:	 76</li>
+                          <li>Average Capacity Utilization	85%</li>
+                          <li>On-Time Delivery Rate	92%</li>
+                          <li>Total Delays	15%</li>
+                        </ul>
+                        After plotting the data, analyze the graphs and draw any conclusions, wholy conclusive or best hypothesis.
+                      </p>
+                    </div>
+                  </div>
+              
+
+        </main>
+
+        
+
+ 
+            
+    
+
+
+    </div>
+
+    <script src="timeTable.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
